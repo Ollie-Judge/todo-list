@@ -11,8 +11,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
-  //let todoItem = todoitem.body["todoItem"];
-  res.render("index.ejs");
+  let todoItem = req.body["todoItem"];
+  res.render("index.ejs", { todoItemOutput: todoItem });
 });
 
 app.listen(port, () => {
