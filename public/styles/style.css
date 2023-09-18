@@ -1,5 +1,36 @@
-body {
-  background-color: blue;
+h2 {
+  margin-top: 15%;
+  text-align: center;
+}
+
+#todoContainer,
+#todoOutput {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+#todoContainer,
+#todoOutput {
+  margin-top: 5%;
+}
+
+#submitButton,
+#userInput {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#submitButton {
+  background-color: #3cb371;
+}
+
+.todoItemLi {
+  padding: 40px auto;
+}
+
+#submitButton:hover {
+  cursor: pointer;
 }
 
 li,

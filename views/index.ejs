@@ -1,15 +1,15 @@
 <%- include("partials/header.ejs") %>
 <h2>To Do List</h2>
+<div id="todoContainer">
     <form action="/submit" method="POST">
-      <input type="text" name="todoItem" placeholder="Write your tasks here" />
-      <input type="submit" value="submit" />
+      <input type="text" id="userInput" name="todoItem" placeholder="Write your tasks here" />
+      <input type="submit" id="submitButton" value="submit" />
     </form>
 
-    <div>
+    <div id="todoOutput">
       <ul>
         <% todoArray.forEach(function(item, index) { %>
-        <li class="todoItemLi">
-          <a class="todoItem" id="todoItem<%= index %>"><%= item %></a>
+        <li class="todoItemLi"id="todoItem<% index %>"><%= item %>
           <input
             type="checkbox"
             id="todoItem<%= index %>Done"
@@ -20,5 +20,6 @@
         <% }); %>
       </ul>
     </div>
+  </div>
   </body>
 </html>
