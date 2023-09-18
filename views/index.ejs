@@ -1,18 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
-  </head>
-  <body>
+    <h2>ToDo List</h2>
     <form action="/submit" method="POST">
       <input type="text" name="todoItem" placeholder="Write your tasks here" />
       <input type="submit" value="submit" />
     </form>
 
     <div>
-      <h5><%= locals.todoItemOutput %></h5>
+      <ul>
+        <% todoArray.forEach(function(item, index) { %>
+        <li class="todoItemLi">
+          <a class="todoItem" id="todoItem<%= index %>"><%= item %></a>
+          <input
+            type="checkbox"
+            id="todoItem<%= index %>Done"
+            name="todoItem<%= index %>Done"
+            value="<%= item %>"
+          />
+        </li>
+        <% }); %>
+      </ul>
     </div>
   </body>
 </html>

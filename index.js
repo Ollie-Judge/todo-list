@@ -6,18 +6,18 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static("public"));
+
 let todoArray = [];
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", { todoArray: todoArray });
 });
 
 app.post("/submit", (req, res) => {
-  // take the user input and store it in an array
-  // then output the array into the ejs file
   let todoItem = req.body["todoItem"];
   todoArray.push(todoItem);
-  res.render("index.ejs", { todoItemOutput: todoArray });
+  res.render("index.ejs", { todoArray: todoArray });
 });
 
 app.listen(port, () => {
