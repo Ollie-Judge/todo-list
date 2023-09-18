@@ -1,4 +1,5 @@
-    <h2>ToDo List</h2>
+<%- include("partials/header.ejs") %>
+<h2>To Do List</h2>
     <form action="/submit" method="POST">
       <input type="text" name="todoItem" placeholder="Write your tasks here" />
       <input type="submit" value="submit" />
